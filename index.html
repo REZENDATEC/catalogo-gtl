@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTL Global | Catálogo G'Vision</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+    --bg-primary: #000000;
+    --bg-secondary: #0a0a0a;
+    --bg-card: #0f0f0f;
+    --bg-card-hover: #1a1a1a;
+    --accent: #00a0e3;
+    --accent-light: #00c8ff;
+    --accent-dark: #0080b8;
+    --accent-glow: rgba(0, 160, 227, 0.25);
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --text-muted: #555555;
+    --border: #1f1f1f;
+    --gradient-1: linear-gradient(135deg, #00a0e3 0%, #0080b8 100%);
+    --gradient-2: linear-gradient(135deg, #000000 0%, #0f0f0f 100%);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    background: var(--gradient-1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--bg-primary);
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.logo-text span {
+    color: var(--accent);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.header-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.header-link:hover {
+    color: var(--accent);
+}
+
+.btn-contact {
+    background: var(--gradient-1);
+    color: var(--bg-primary);
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-contact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+/* Hero */
+.hero {
+    padding: 140px 40px 80px;
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 50% 0%, var(--accent-glow) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 212, 170, 0.1);
+    border: 1px solid rgba(0, 212, 170, 0.3);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+/* Search */
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-box:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-glow);
+}
+
+.search-box i {
+    padding: 0 15px;
+    color: var(--text-muted);
+}
+
+.search-box input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-size: 16px;
+    padding: 15px 0;
+}
+
+.search-box input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Navigation */
+nav {
+    padding: 20px 40px;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+}
+
+.nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+nav a:hover {
+    color: var(--text-primary);
+    background: var(--bg-card);
+}
+
+nav a.active {
+    color: var(--bg-primary);
+    background: var(--gradient-1);
+    border-color: transparent;
+}
+
+/* Main */
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.product-count {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.product-count span {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+/* Cards */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px var(--accent-glow);
+}
+
+.card-img {
+    height: 200px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(0, 212, 170, 0.1) 0%, transparent 60%);
+}
+
+.card-img img {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.4s;
+}
+
+.card:hover .card-img img {
+    transform: scale(1.08);
+}
+
+.card-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--gradient-1);
+    color: var(--bg-primary);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+
+.card-body {
+    padding: 24px;
+}
+
+.card-model {
+    font-family: 'SF Mono', 'Consolas', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-model i {
+    font-size: 10px;
+}
+
+.card-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.card-btn {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.card-btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg-primary);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg-primary);
+}
+
+.modal-img {
+    height: 280px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.modal-img::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(0, 212, 170, 0.15) 0%, transparent 60%);
+}
+
+.modal-img img {
+    max-width: 70%;
+    max-height: 80%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.modal-model {
+    font-family: 'SF Mono', 'Consolas', monospace;
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.modal-name {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.specs-title {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.specs-title i {
+    color: var(--accent);
+}
+
+.specs-section {
+    margin-bottom: 24px;
+}
+
+.ai-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ai-tag {
+    background: rgba(0, 160, 227, 0.1);
+    border: 1px solid rgba(0, 160, 227, 0.3);
+    color: var(--accent);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ai-tag i {
+    font-size: 10px;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.spec-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.spec-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.spec-value {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    flex: 1;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--gradient-1);
+    color: var(--bg-primary);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.btn-secondary {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--text-muted);
+}
+
+.empty-state i {
+    font-size: 48px;
+    margin-bottom: 20px;
+    opacity: 0.3;
+}
+
+.empty-state h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
+/* Footer */
+footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 40px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo-icon {
+    width: 35px;
+    height: 35px;
+    background: var(--gradient-1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    color: var(--bg-primary);
+}
+
+.footer-text {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header { padding: 0 20px; }
+    .header-right { display: none; }
+    .hero { padding: 120px 20px 60px; }
+    .hero h1 { font-size: 32px; }
+    nav { padding: 15px 20px; }
+    main { padding: 20px; }
+    .grid { grid-template-columns: 1fr; }
+    .specs-grid { grid-template-columns: 1fr; }
+    .modal-actions { flex-direction: column; }
+    .footer-content { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <a href="#" class="logo">
+        <div class="logo-icon">GTL</div>
+        <div class="logo-text">GTL<span>Global</span></div>
+    </a>
+    <div class="header-right">
+        <a href="https://www.gtlglobal.com.br" target="_blank" class="header-link">Site Oficial</a>
+        <a href="https://www.gtlglobal.com.br" class="btn-contact">Entre em contato</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-shield-alt"></i> Linha G'Vision</div>
+        <h1>Catálogo de Câmeras <span>G'Vision</span></h1>
+        <p>Soluções inteligentes de videomonitoramento com IA embarcada para proteger ativos e otimizar sua operação.</p>
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search" placeholder="Buscar por modelo, série ou especificação...">
+            </div>
+        </div>
+    </div>
+</section>
+
+<nav>
+    <div class="nav-inner">
+        <a href="#" data-cat="all" class="active"><i class="fas fa-th"></i> Todos</a>
+        <a href="#" data-cat="ptz"><i class="fas fa-video"></i> PTZ Speed Dome</a>
+        <a href="#" data-cat="ip"><i class="fas fa-camera"></i> Câmeras IP</a>
+        <a href="#" data-cat="anpr"><i class="fas fa-car"></i> LPR/ANPR</a>
+        <a href="#" data-cat="deterrence"><i class="fas fa-bell"></i> Active Deterrence</a>
+        <a href="#" data-cat="panoramic"><i class="fas fa-expand"></i> Panorâmicas</a>
+        <a href="#" data-cat="thermal"><i class="fas fa-temperature-high"></i> Térmicas</a>
+        <a href="#" data-cat="explosion"><i class="fas fa-fire-alt"></i> Anti-Explosão</a>
+        <a href="#" data-cat="radar"><i class="fas fa-satellite-dish"></i> Radares</a>
+    </div>
+</nav>
+
+<main>
+    <div class="section-header">
+        <div class="section-title">Produtos G'Vision</div>
+        <div class="product-count"><span id="count">0</span> produtos encontrados</div>
+    </div>
+    <div class="grid" id="grid"></div>
+</main>
+
+<div class="modal" id="modal">
+    <div class="modal-content" id="modal-content"></div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <div class="footer-logo-icon">GTL</div>
+            <span class="footer-text">© 2025 GTL Global | Soluções Inteligentes</span>
+        </div>
+        <div class="footer-links">
+            <a href="mailto:comercial@gtlglobal.com.br"><i class="fas fa-envelope"></i> comercial@gtlglobal.com.br</a>
+            <a href="https://www.instagram.com/gtlglobal/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.linkedin.com/company/gtlglobal" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+const IMG = {
+    ptz: "https://www.sunellsecurity.com/resources/image/2025/06/16/SN-IPS8655WDR-Z30.png",
+    bullet: "https://www.sunellsecurity.com/resources/image/2025/06/19/SN-IPR8046AKAN(-S)-VZ.png",
+    ultra: "https://www.sunellsecurity.com/resources/image/2025/06/20/SN-IPR8084DQAN-VZ.png",
+    thermal: "https://www.sunellsecurity.com/resources/image/Bullet-Thermal-Cameras.webp",
+    anpr: "https://www.sunellsecurity.com/resources/image/anpr-cctv-camera-web-banner.webp",
+    panoramic: "https://www.sunellsecurity.com/resources/image/panoramic-series-cameras.webp",
+    explosion: "https://www.sunellsecurity.com/resources/image/Sunell-Explosion-Proof-Network-Cameras.webp",
+    nighthawk: "https://www.sunellsecurity.com/resources/image/2025/06/19/SN-IPR8046AKAN(-S)-VZ.png",
+    deterrence: "https://www.sunellsecurity.com/resources/image/2025/06/19/SN-IPR8046AKAN(-S)-VZ.png",
+    eco: "https://www.sunellsecurity.com/resources/image/2025/06/19/SN-IPR8046AKAN(-S)-VZ.png",
+    lite: "https://www.sunellsecurity.com/resources/image/2025/06/19/SN-IPR8046AKAN(-S)-VZ.png",
+    radar: "https://www.sunellsecurity.com/resources/image/2025/06/05/SN-SMWR21A-P.png"
+};
+
+const P=[
+// ===== PTZ CAMERAS =====
+{m:"GTL-IPS8655WDR-Z30",n:"7-inch 5MP 30x Starlight IR Network PTZ Camera",c:"ptz",s:"PTZ 7\"",img:IMG.ptz,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"5MP (2592×1944)",Lente:"4.5-135mm (30x óptico)",Zoom:"30x óptico + 16x digital",IR:"200m Smart IR adaptativo",WDR:"120dB True WDR",Compressão:"H.265+/H.264+/MJPEG",FPS:"30fps@5MP",Pan:"360° endless, 400°/s",Tilt:"-20°~90°, 300°/s"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Detecção Fumaça/Chama","Auto Tracking","Cruzamento de Linha","Intrusão de Área","Contagem de Pessoas"],
+extra:{Áudio:"Mic + Speaker bidirecional",Alarme:"2 in / 2 out",Slot:"MicroSD até 256GB",Rede:"RJ45 10/100M",Alimentação:"24VAC / Hi-PoE",Consumo:"60W max",Operação:"-40°C ~ +70°C",Proteção:"IP66, TVS 6000V"},t:["5MP","30x","200m IR","Starlight","Auto Tracking"]},
+
+{m:"GTL-IPS8655YDR-Z30",n:"5-inch 5MP 30x Starlight IR Network PTZ Camera",c:"ptz",s:"PTZ 5\"",img:IMG.ptz,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"5MP (2592×1944)",Lente:"4.5-135mm (30x óptico)",Zoom:"30x óptico + 16x digital",IR:"200m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@5MP",Pan:"360° endless",Tilt:"-15°~90°"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Auto Tracking","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic integrado",Alarme:"1 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE+",Consumo:"25W max",Operação:"-30°C ~ +60°C",Proteção:"IP66"},t:["5MP","30x","200m IR","Compacta"]},
+
+{m:"GTL-IPS8655YDS-Z30",n:"5-inch Smart Dual Light PTZ Network Camera",c:"ptz",s:"PTZ Dual",img:IMG.ptz,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"5MP (2592×1944)",Lente:"4.5-135mm (30x óptico)",Zoom:"30x óptico + 16x digital",IR:"150m IR + 50m Warm Light",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@5MP",Pan:"360° endless",Tilt:"-15°~90°"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Auto Tracking","Luz inteligente por evento","Cruzamento de Linha"],
+extra:{Áudio:"Mic + Speaker",Alarme:"2 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE+",Consumo:"30W max",Operação:"-30°C ~ +60°C",Proteção:"IP66"},t:["5MP","30x","Dual Light","Full Color"]},
+
+{m:"GTL-IPS8655YDR-Z18",n:"5-inch 5MP 18x Starlight IR PTZ Camera",c:"ptz",s:"PTZ 5\"",img:IMG.ptz,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"5MP (2592×1944)",Lente:"5.4-97.2mm (18x óptico)",Zoom:"18x óptico + 16x digital",IR:"150m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@5MP",Pan:"360° endless",Tilt:"-15°~90°"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Auto Tracking","Cruzamento de Linha"],
+extra:{Áudio:"Mic integrado",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE+",Consumo:"20W max",Operação:"-30°C ~ +60°C",Proteção:"IP66"},t:["5MP","18x","150m IR"]},
+
+{m:"GTL-IPS8681VDR-Z40",n:"7-inch 8MP 40x Starlight IR Network PTZ Camera",c:"ptz",s:"PTZ 4K",img:IMG.ptz,
+sp:{Sensor:'1/1.8" Sony STARVIS CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"5.6-224mm (40x óptico)",Zoom:"40x óptico + 16x digital",IR:"300m Laser IR",WDR:"140dB True WDR",Compressão:"H.265+/H.264+/MJPEG",FPS:"30fps@4K",Pan:"360° endless, 400°/s",Tilt:"-20°~90°, 300°/s"},
+ai:["Detecção Facial avançada","Reconhecimento Humano/Veículo","Auto Tracking 3.0","Cruzamento de Linha","Intrusão de Área","Detecção de Objeto Abandonado","Contagem Bidirecional"],
+extra:{Áudio:"Mic + Speaker bidirecional",Alarme:"7 in / 2 out",Slot:"MicroSD até 512GB",Rede:"RJ45 Gigabit",Alimentação:"24VAC / Hi-PoE",Consumo:"80W max",Operação:"-40°C ~ +70°C",Proteção:"IP66 IK10"},t:["8MP","4K","40x","300m IR","Laser"]},
+
+{m:"GTL-IPS8646VDR-Z40",n:"7-inch 4MP 40x Starlight IR Network PTZ Camera",c:"ptz",s:"PTZ 7\"",img:IMG.ptz,
+sp:{Sensor:'1/1.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"5.6-224mm (40x óptico)",Zoom:"40x óptico + 16x digital",IR:"300m Smart IR",WDR:"140dB True WDR",Compressão:"H.265+/H.264+",FPS:"60fps@4MP",Pan:"360° endless",Tilt:"-20°~90°"},
+ai:["Detecção Facial","Auto Tracking","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic + Speaker",Alarme:"7 in / 2 out",Slot:"MicroSD até 256GB",Alimentação:"24VAC / Hi-PoE",Consumo:"70W max",Operação:"-40°C ~ +70°C",Proteção:"IP66"},t:["4MP","40x","300m IR","60fps"]},
+
+{m:"GTL-IPS8641VDR-Z37",n:"4MP 37x Starlight IR PTZ Camera",c:"ptz",s:"PTZ",img:IMG.ptz,
+sp:{Sensor:'1/1.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"5.7-210.9mm (37x óptico)",Zoom:"37x óptico + 16x digital",IR:"250m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP",Pan:"360° endless",Tilt:"-15°~90°"},
+ai:["Auto Tracking","Cruzamento de Linha","Intrusão de Área","Detecção de Movimento"],
+extra:{Áudio:"Mic integrado",Alarme:"2 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"24VAC / PoE+",Consumo:"45W max",Operação:"-40°C ~ +65°C",Proteção:"IP66"},t:["4MP","37x","250m IR"]},
+
+{m:"GTL-IPS8641WDL-Z37",n:"4MP 37x Laser PTZ Camera",c:"ptz",s:"PTZ Laser",img:IMG.ptz,
+sp:{Sensor:'1/1.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"5.7-210.9mm (37x óptico)",Zoom:"37x óptico + 16x digital",Laser:"500m Laser IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP",Pan:"360° endless",Tilt:"-15°~90°"},
+ai:["Auto Tracking","Cruzamento de Linha","Intrusão de Área","Detecção de Movimento"],
+extra:{Áudio:"Mic + Speaker",Alarme:"7 in / 2 out",Slot:"MicroSD até 256GB",Alimentação:"24VAC",Consumo:"80W max",Operação:"-40°C ~ +65°C",Proteção:"IP66"},t:["4MP","37x","Laser 500m","Longo Alcance"]},
+
+{m:"GTL-IPS8654ZDC-Z5",n:"5MP Mini PTZ Active Deterrence",c:"ptz",s:"Mini PTZ",img:IMG.deterrence,
+sp:{Sensor:'1/2.8" CMOS',Resolução:"5MP (2592×1944)",Lente:"2.7-13.5mm (5x óptico)",Zoom:"5x óptico + 16x digital",IR:"50m IR + Strobe",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@5MP",Pan:"360° endless",Tilt:"-30°~90°"},
+ai:["Reconhecimento Humano/Veículo","Alerta por Áudio","Disparo de Sirene","Luz Strobe automática","Cruzamento de Linha"],
+extra:{Áudio:"Mic + Speaker + Sirene",Alarme:"1 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"15W max",Operação:"-30°C ~ +60°C",Proteção:"IP66"},t:["5MP","5x","Deterrence","Sirene"]},
+
+// ===== ULTRA SERIES (Starlight 8MP) =====
+{m:"GTL-IPR8084DQAN-VZ",n:"8MP Starlight IR Varifocal Bullet Network Camera",c:"ip",s:"Ultra 8MP",img:IMG.ultra,
+sp:{Sensor:'1/1.8" Sony STARVIS II CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"3.6-11mm motorizada (AF)",IR:"70m Smart IR adaptativo",WDR:"140dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+/MJPEG",FPS:"25fps@4K, 60fps@1080p",Abertura:"F1.5 ultra bright"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Detecção de Face","Contagem de Pessoas"],
+extra:{Áudio:"Mic + Speaker bidirecional",Alarme:"1 in / 1 out",Slot:"MicroSD até 256GB",Rede:"RJ45 10/100M",Alimentação:"12VDC / PoE (IEEE802.3af)",Consumo:"12W max",Operação:"-40°C ~ +60°C",Proteção:"IP66, TVS 6000V"},t:["8MP","4K","Starlight II","WDR 140dB"]},
+
+{m:"GTL-IPR8084AKAN-VZ",n:"8MP Starlight IR Varifocal Bullet Camera",c:"ip",s:"Ultra 8MP",img:IMG.ultra,
+sp:{Sensor:'1/1.8" Sony STARVIS II CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"3.6-11mm ou 5-50mm motorizada",IR:"70m Smart IR",WDR:"140dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"25fps@4K",Abertura:"F1.5"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic + Speaker (-S)",Alarme:"1 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"15W max",Operação:"-40°C ~ +60°C",Proteção:"IP66 IK10"},t:["8MP","4K","Starlight II","IK10"]},
+
+// ===== PRO SERIES =====
+{m:"GTL-IPR8046DQAN-VZ",n:"4MP IR Varifocal Bullet Network Camera",c:"ip",s:"Pro",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"2.7-12mm motorizada (AF)",IR:"60m Smart IR adaptativo",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+/MJPEG",FPS:"30fps@4MP, 60fps@1080p",Abertura:"F1.4"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Detecção de Objeto Abandonado"],
+extra:{Áudio:"Mic + Speaker bidirecional",Alarme:"1 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"10W max",Operação:"-40°C ~ +60°C",Proteção:"IP66"},t:["4MP","Starlight","Pro","60fps"]},
+
+{m:"GTL-IPR8046AKAN-VZ",n:"4MP IR Varifocal Bullet Network Camera",c:"ip",s:"Pro",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"2.7-12mm ou 5-50mm motorizada",IR:"60m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP",Abertura:"F1.4"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic + Speaker opcional (-S)",Alarme:"1 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"12W max",Operação:"-40°C ~ +60°C",Proteção:"IP66 IK10"},t:["4MP","Starlight","Pro","IK10"]},
+
+{m:"GTL-IPR8056DQAN-VZ",n:"5MP IR Varifocal Bullet Network Camera",c:"ip",s:"Pro",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"5MP (2592×1944)",Lente:"2.7-13.5mm motorizada",IR:"60m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"30fps@5MP",Abertura:"F1.4"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic integrado",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"9W max",Operação:"-40°C ~ +60°C",Proteção:"IP66"},t:["5MP","Pro","IR 60m"]},
+
+{m:"GTL-IPV8046DQAN-B",n:"4MP Pro Turret Camera",c:"ip",s:"Pro Turret",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"2.7-12mm motorizada",IR:"40m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP",Abertura:"F1.4"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic + Speaker",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"8W max",Operação:"-30°C ~ +60°C",Proteção:"IP66 IK10"},t:["4MP","Turret","Pro"]},
+
+{m:"GTL-IPD8046DQAN-B",n:"4MP Pro Dome Camera",c:"ip",s:"Pro Dome",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"2.7-12mm motorizada",IR:"40m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP",Abertura:"F1.4"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic + Speaker",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"8W max",Operação:"-30°C ~ +60°C",Proteção:"IP66 IK10, anti-vandalismo"},t:["4MP","Dome","Pro","IK10"]},
+
+// ===== ACTIVE DETERRENCE =====
+{m:"GTL-IPV8542CQAE-B",n:"4MP Active Deterrence Turret Camera",c:"deterrence",s:"Deterrence",img:IMG.deterrence,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"4MP (2592×1520)",Lente:"2.8mm fixa",Iluminação:"30m IR + 20m Warm Light + Strobe",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP",Sirene:"105dB integrada"},
+ai:["Reconhecimento Humano/Veículo","Disparo automático de sirene","Luz strobe por evento","Mensagem de áudio personalizada","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic + Speaker + Sirene 105dB",Alarme:"1 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"12W max",Operação:"-30°C ~ +60°C",Proteção:"IP66"},t:["4MP","Sirene","Strobe","Deterrence"]},
+
+{m:"GTL-IPR8542KFAE-B",n:"4MP NightHawk Full Color Active Deterrence Bullet",c:"deterrence",s:"Deterrence",img:IMG.deterrence,
+sp:{Sensor:'1/1.8" AI ISP CMOS',Resolução:"4MP (2592×1520)",Lente:"2.8mm ou 4mm fixa",Iluminação:"Strobe + 30m Dual Light",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP",Tech:"AI ISP NightHawk Full Color 24/7"},
+ai:["AI ISP Ultra Low Light","Reconhecimento Humano/Veículo","Disparo de sirene inteligente","Full Color 24/7 sem IR","Cruzamento de Linha"],
+extra:{Áudio:"Mic + Speaker + Sirene",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"10W max",Operação:"-30°C ~ +60°C",Proteção:"IP67 IK10"},t:["4MP","NightHawk","Full Color","IK10"]},
+
+{m:"GTL-IPV8542CFAE-B",n:"4MP Smart Dual Light Deterrence Turret",c:"deterrence",s:"Deterrence",img:IMG.deterrence,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"4MP (2592×1520)",Lente:"2.8mm ou 4mm fixa",Iluminação:"30m Smart Dual Light (IR + Warm)",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP"},
+ai:["Reconhecimento Humano/Veículo","Troca inteligente IR/Warm Light","Disparo de sirene","Flash strobe","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic + Speaker + Sirene",Alarme:"1 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"10W max",Operação:"-30°C ~ +60°C",Proteção:"IP66"},t:["4MP","Dual Light","Sirene","Smart"]},
+
+// ===== ANPR/LPR =====
+{m:"GTL-IPR8047AKAN-ST-PZ",n:"4MP ANPR Camera 250km/h",c:"anpr",s:"ANPR",img:IMG.anpr,
+sp:{Sensor:'1/1.8" Sony STARVIS CMOS',Resolução:"4MP (2688×1520)",Lente:"8-32mm motorizada (4x zoom)",IR:"30m IR LED + Strobe",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP",LPR:"Built-in até 250km/h"},
+ai:["Reconhecimento de Placas (LPR)","Velocidade até 250km/h","Whitelist/Blacklist integrada","Captura de cor do veículo","Detecção de marca/modelo","Output Wiegand 26/34"],
+extra:{Wiegand:"Wiegand 26/34 output",Slot:"MicroSD até 256GB",Rede:"RJ45 Gigabit",Alimentação:"12VDC / PoE+",Consumo:"25W max",Operação:"-40°C ~ +65°C",Proteção:"IP66 IK10"},t:["4MP","LPR","250km/h","Wiegand"]},
+
+{m:"GTL-IPC8290WAN-T-F",n:"9MP ANPR Dual Lens Camera",c:"anpr",s:"ANPR Dual",img:IMG.anpr,
+sp:{Sensor:'Dual: 5MP + 4MP CMOS',Resolução:"9MP total (5MP contexto + 4MP LPR)",Lente:"Dual: 6mm (contexto) + 8-32mm (LPR)",IR:"30m IR para cada lente",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps cada canal"},
+ai:["Captura simultânea Placa + Contexto","Reconhecimento de Placas","Cor e tipo de veículo","Whitelist/Blacklist","Detecção de direção","Output Wiegand"],
+extra:{Wiegand:"Wiegand 26/34 output",Slot:"MicroSD até 256GB",Rede:"RJ45 Gigabit",Alimentação:"12VDC / PoE++",Consumo:"30W max",Operação:"-40°C ~ +60°C",Proteção:"IP66"},t:["9MP","Dual Lens","LPR","Contexto"]},
+
+{m:"GTL-IPR8045DQAN-T-VZ",n:"4MP LPR Outdoor Camera",c:"anpr",s:"ANPR",img:IMG.anpr,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"4MP (2592×1520)",Lente:"5-50mm motorizada (10x zoom)",IR:"50m IR LED",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP",LPR:"Built-in até 120km/h"},
+ai:["Reconhecimento de Placas (LPR)","Velocidade até 120km/h","Whitelist/Blacklist","Output Wiegand 26/34","Detecção de veículo"],
+extra:{Wiegand:"Wiegand 26/34 output",Alarme:"1 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE+",Consumo:"18W max",Operação:"-40°C ~ +60°C",Proteção:"IP66"},t:["4MP","LPR","120km/h","Wiegand"]},
+
+// ===== NIGHTHAWK =====
+{m:"GTL-IPV8540HDAW-B",n:"4MP NightHawk Full Color Turret",c:"ip",s:"NightHawk",img:IMG.nighthawk,
+sp:{Sensor:'1/1.8" AI ISP CMOS',Resolução:"4MP (2592×1520)",Lente:"2.8mm ou 4mm fixa",Iluminação:"30m Warm Light Full Color",WDR:"120dB True WDR",DNR:"AI 3D DNR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP",Tech:"AI ISP Full Color 24/7"},
+ai:["AI ISP processamento em chip","Full Color 24/7 sem IR","Reconhecimento Humano/Veículo","Ultra Low Light 0.0005 lux","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic integrado",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"7W max",Operação:"-30°C ~ +60°C",Proteção:"IP67"},t:["4MP","NightHawk","Full Color","AI ISP"]},
+
+{m:"GTL-IPR8540HDAR-B",n:"4MP NightHawk IR Bullet",c:"ip",s:"NightHawk",img:IMG.nighthawk,
+sp:{Sensor:'1/1.8" AI ISP CMOS',Resolução:"4MP (2592×1520)",Lente:"2.8mm ou 4mm fixa",IR:"40m Smart IR adaptativo",WDR:"120dB True WDR",DNR:"AI 3D DNR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP",Tech:"AI ISP Ultra Low Light"},
+ai:["AI ISP processamento em chip","Ultra Low Light 0.001 lux","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic integrado",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"8W max",Operação:"-40°C ~ +60°C",Proteção:"IP67"},t:["4MP","NightHawk","IR","Ultra Low Light"]},
+
+{m:"GTL-IPV8580HDAW-B",n:"8MP NightHawk Full Color Turret",c:"ip",s:"NightHawk 4K",img:IMG.nighthawk,
+sp:{Sensor:'1/1.2" AI ISP CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"2.8mm ou 4mm fixa",Iluminação:"30m Warm Light Full Color",WDR:"140dB True WDR",DNR:"AI 3D DNR",Compressão:"H.265+/H.264+",FPS:"25fps@4K",Tech:"AI ISP 4K Full Color"},
+ai:["AI ISP processamento em chip","Full Color 4K 24/7","Reconhecimento Humano/Veículo","Ultra Low Light 0.0003 lux","Cruzamento de Linha","Intrusão de Área","Detecção Facial"],
+extra:{Áudio:"Mic + Speaker",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"10W max",Operação:"-30°C ~ +60°C",Proteção:"IP67"},t:["8MP","4K","NightHawk","Full Color"]},
+
+// ===== PANORAMIC =====
+{m:"GTL-IPP8086QAS-B",n:"8MP 180° Panoramic Bullet Camera",c:"panoramic",s:"Panoramic",img:IMG.panoramic,
+sp:{Sensor:'2x 1/2.8" Progressive Scan CMOS',Resolução:"8MP (4096×1800) 180°",Lente:"2x 2.8mm fixa (180° combinado)",Iluminação:"30m Smart Dual Light cada",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"25fps@8MP",Cobertura:"180° panorâmico sem distorção"},
+ai:["Reconhecimento Humano/Veículo","Stitching automático 180°","Cruzamento de Linha panorâmico","Intrusão de Área multi-zona","Contagem de Pessoas"],
+extra:{Áudio:"Mic + Speaker",Alarme:"1 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE+",Consumo:"18W max",Operação:"-30°C ~ +60°C",Proteção:"IP66 IK10"},t:["8MP","180°","Panoramic","Dual Sensor"]},
+
+{m:"GTL-IPP80126QAS-B",n:"12MP 180° Panoramic Camera",c:"panoramic",s:"Panoramic 12MP",img:IMG.panoramic,
+sp:{Sensor:'2x 1/1.8" Progressive Scan CMOS',Resolução:"12MP (5520×2400) 180°",Lente:"2x 2.8mm fixa (180° combinado)",Iluminação:"40m Smart Dual Light",WDR:"140dB True WDR",Compressão:"H.265+/H.264+",FPS:"20fps@12MP",Cobertura:"180° panorâmico alta resolução"},
+ai:["Reconhecimento Humano/Veículo","Stitching automático 180°","Detecção Facial em panorâmica","Cruzamento de Linha","Contagem Bidirecional"],
+extra:{Áudio:"Mic + Speaker",Alarme:"2 in / 2 out",Slot:"MicroSD até 512GB",Rede:"RJ45 Gigabit",Alimentação:"12VDC / PoE++",Consumo:"25W max",Operação:"-40°C ~ +60°C",Proteção:"IP66"},t:["12MP","180°","Panoramic","Alta Resolução"]},
+
+{m:"GTL-IPP8244QAS-B",n:"4x4MP 360° Panoramic Camera",c:"panoramic",s:"Panoramic 360°",img:IMG.panoramic,
+sp:{Sensor:'4x 1/2.8" Progressive Scan CMOS',Resolução:"4x4MP (16MP total) 360°",Lente:"4x 2.8mm fixa (90° cada = 360°)",Iluminação:"30m Smart Dual Light cada",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"25fps cada canal",Cobertura:"360° cobertura completa"},
+ai:["Reconhecimento Humano/Veículo 360°","4 canais independentes","Stitching 360° automático","Cruzamento de Linha multi-direção","Intrusão de Área 360°","Contagem de Pessoas"],
+extra:{Áudio:"Mic + Speaker",Alarme:"2 in / 2 out",Slot:"MicroSD até 512GB",Rede:"RJ45 Gigabit",Alimentação:"PoE++ / 12VDC",Consumo:"35W max",Operação:"-30°C ~ +60°C",Proteção:"IP66 IK10"},t:["16MP","360°","Multi-Sensor","4 Canais"]},
+
+// ===== THERMAL =====
+{m:"GTL-TPC4207KT-F",n:"Thermal Bi-Spectrum Bullet Camera",c:"thermal",s:"Thermal",img:IMG.thermal,
+sp:{SensorTermico:'400×300 VOx Uncooled',SensorOptico:'1/2.8" 4MP CMOS',LenteTermica:"7mm (56°×42°)",LenteOptica:"4mm fixa",NETD:"≤40mK @25°C",Faixa:"-20°C ~ +150°C",IR:"30m Smart IR (canal óptico)",Compressão:"H.265+/H.264+"},
+ai:["Detecção de Fogo/Fumaça","Alarme de Temperatura","Reconhecimento Humano térmico","Medição de temperatura por área","Cruzamento de Linha bi-spectrum"],
+extra:{Precisão:"±2°C ou ±2%",Alarme:"2 in / 2 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"12W max",Operação:"-40°C ~ +60°C",Proteção:"IP66"},t:["Térmica","Bi-Spectrum","400x300","Fire Detection"]},
+
+{m:"GTL-TPC6406VT-F",n:"Fixed Thermal Camera 640x512",c:"thermal",s:"Thermal HD",img:IMG.thermal,
+sp:{SensorTermico:'640×512 VOx Uncooled',LenteTermica:"6.2mm (90°×70°)",NETD:"≤35mK @25°C",Faixa:"-20°C ~ +550°C",Paletas:"16 paletas de cor",FPS:"50fps térmico",Compressão:"H.265+/H.264+"},
+ai:["Detecção de Fogo precoce","Detecção de Fumaça","Alarme de Superaquecimento","Monitoramento de área industrial","ROI múltiplas zonas temperatura"],
+extra:{Precisão:"±2°C ou ±2%",Alarme:"2 in / 2 out",Slot:"MicroSD até 256GB",Rede:"RJ45 Gigabit",Alimentação:"12VDC / PoE+",Consumo:"15W max",Aplicação:"Industrial / Data Center / Subestações",Proteção:"IP66"},t:["Térmica","640x512","Fire Detection","Industrial"]},
+
+{m:"GTL-TPS4157ET-F",n:"Thermal PTZ Speed Dome Bi-Spectrum",c:"thermal",s:"Thermal PTZ",img:IMG.thermal,
+sp:{SensorTermico:'400×300 VOx Uncooled',SensorOptico:'1/2.8" 4MP CMOS',LenteTermica:"25-75mm zoom",LenteOptica:"5.4-135mm (25x zoom)",NETD:"≤40mK",Faixa:"-20°C ~ +150°C",Pan:"360° endless",Tilt:"-20°~90°"},
+ai:["Auto Tracking térmico","Detecção de Fogo/Fumaça","Patrulha térmica automática","Alarme de temperatura","Fusão de imagem térmica/óptica"],
+extra:{Precisão:"±2°C ou ±2%",Alarme:"7 in / 2 out",Slot:"MicroSD até 256GB",Alimentação:"24VAC / Hi-PoE",Consumo:"60W max",Operação:"-40°C ~ +65°C",Proteção:"IP66"},t:["Térmica","PTZ","Bi-Spectrum","Auto Tracking"]},
+
+{m:"GTL-TPC4207KV-F",n:"Thermal Bi-Spectrum Turret Camera",c:"thermal",s:"Thermal Turret",img:IMG.thermal,
+sp:{SensorTermico:'400×300 VOx Uncooled',SensorOptico:'1/2.8" 4MP CMOS',LenteTermica:"7mm fixa",LenteOptica:"4mm fixa",NETD:"≤40mK @25°C",Faixa:"-20°C ~ +150°C",IR:"30m Smart IR",Compressão:"H.265+/H.264+"},
+ai:["Detecção de Fogo/Fumaça","Reconhecimento Humano/Veículo","Alarme de temperatura","Cruzamento de Linha bi-spectrum"],
+extra:{Precisão:"±2°C ou ±2%",Alarme:"1 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"10W max",Operação:"-40°C ~ +60°C",Proteção:"IP66"},t:["Térmica","Turret","Bi-Spectrum","Compacta"]},
+
+// ===== ECO SERIES =====
+{m:"GTL-IPV7180HCAR-B",n:"8MP Eco Turret Camera",c:"ip",s:"Eco",img:IMG.eco,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"8MP (3840×2160)",Lente:"2.8mm fixa",IR:"30m Smart IR",WDR:"Digital WDR",Compressão:"H.265/H.264",FPS:"20fps@8MP, 30fps@1080p"},
+ai:["Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Detecção de Movimento"],
+extra:{Slot:"MicroSD até 128GB",Alimentação:"12VDC / PoE",Consumo:"6W max",Operação:"-30°C ~ +60°C",Proteção:"IP66"},t:["8MP","Eco","Turret","Custo-Benefício"]},
+
+{m:"GTL-IPR7180BYAN-B",n:"8MP Eco Bullet Camera",c:"ip",s:"Eco",img:IMG.eco,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"8MP (3840×2160)",Lente:"2.8mm ou 4mm fixa",IR:"40m Smart IR",WDR:"Digital WDR",Compressão:"H.265/H.264",FPS:"20fps@8MP, 30fps@1080p"},
+ai:["Detecção de Movimento","Cruzamento de Linha","Intrusão de Área"],
+extra:{Slot:"MicroSD até 128GB",Alimentação:"12VDC / PoE",Consumo:"7W max",Operação:"-40°C ~ +60°C",Proteção:"IP67"},t:["8MP","Eco","Bullet","IP67"]},
+
+{m:"GTL-IPV7140HCAR-B",n:"4MP Eco Turret Camera",c:"ip",s:"Eco",img:IMG.eco,
+sp:{Sensor:'1/3" Progressive Scan CMOS',Resolução:"4MP (2592×1520)",Lente:"2.8mm fixa",IR:"30m Smart IR",WDR:"Digital WDR",Compressão:"H.265/H.264",FPS:"25fps@4MP"},
+ai:["Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Slot:"MicroSD até 128GB",Alimentação:"12VDC / PoE",Consumo:"5W max",Operação:"-30°C ~ +60°C",Proteção:"IP66"},t:["4MP","Eco","Turret","Entrada"]},
+
+{m:"GTL-IPR7140BYAN-B",n:"4MP Eco Bullet Camera",c:"ip",s:"Eco",img:IMG.eco,
+sp:{Sensor:'1/3" Progressive Scan CMOS',Resolução:"4MP (2592×1520)",Lente:"2.8mm ou 4mm fixa",IR:"40m Smart IR",WDR:"Digital WDR",Compressão:"H.265/H.264",FPS:"25fps@4MP"},
+ai:["Detecção de Movimento","Cruzamento de Linha","Intrusão de Área"],
+extra:{Slot:"MicroSD até 128GB",Alimentação:"12VDC / PoE",Consumo:"6W max",Operação:"-40°C ~ +60°C",Proteção:"IP67"},t:["4MP","Eco","Bullet","Entrada"]},
+
+// ===== LITE SERIES =====
+{m:"GTL-IPV5340HZBS-B",n:"4MP Lite Turret Smart Dual Light",c:"ip",s:"Lite",img:IMG.lite,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"4MP (2592×1520)",Lente:"2.8mm fixa",Iluminação:"30m Smart Dual Light (IR + Warm)",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"25fps@4MP"},
+ai:["Reconhecimento Humano/Veículo","Troca inteligente IR/Warm Light","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic integrado",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"7W max",Operação:"-30°C ~ +60°C",Proteção:"IP66"},t:["4MP","Lite","Dual Light","Smart"]},
+
+{m:"GTL-IPR5340HZBR-B",n:"4MP Lite Bullet IR Camera",c:"ip",s:"Lite",img:IMG.lite,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"4MP (2592×1520)",Lente:"2.8mm ou 4mm fixa",IR:"40m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"25fps@4MP"},
+ai:["Detecção de Movimento","Cruzamento de Linha","Intrusão de Área"],
+extra:{Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"7W max",Operação:"-40°C ~ +60°C",Proteção:"IP67"},t:["4MP","Lite","Bullet","IR 40m"]},
+
+{m:"GTL-IPV5380HZBS-B",n:"8MP Lite Turret Smart Dual Light",c:"ip",s:"Lite 4K",img:IMG.lite,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"2.8mm fixa",Iluminação:"30m Smart Dual Light",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"20fps@4K, 30fps@1080p"},
+ai:["Reconhecimento Humano/Veículo","Troca inteligente IR/Warm Light","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic integrado",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"9W max",Operação:"-30°C ~ +60°C",Proteção:"IP66"},t:["8MP","4K","Lite","Dual Light"]},
+
+// ===== EXPLOSION-PROOF =====
+{m:"GTL-CHP8650CDR-Z30-SS",n:"Explosion-Proof PTZ Camera 30x Stainless Steel",c:"explosion",s:"ATEX PTZ",img:IMG.explosion,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"4.5-135mm (30x zoom)",Zoom:"30x óptico + 16x digital",IR:"200m Laser IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",Pan:"360° endless",Material:"Inox 316L"},
+ai:["Auto Tracking","Cruzamento de Linha","Intrusão de Área","Detecção de Movimento","Patrulha automática"],
+extra:{Certificação:"IECEx / ATEX Zone 1,2,21,22",ExProof:"Ex d IIC T6 Gb / Ex tb IIIC T80°C Db",Alimentação:"24VAC",Consumo:"80W max",Operação:"-40°C ~ +65°C",Proteção:"IP68",Limpador:"Wiper integrado"},t:["4MP","ATEX","30x","Inox 316L","Zone 1"]},
+
+{m:"GTL-CHR8044AKAN-SS",n:"Explosion-Proof Bullet Camera Stainless Steel",c:"explosion",s:"ATEX Bullet",img:IMG.explosion,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"2.8mm ou 4mm fixa",IR:"60m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP",Material:"Inox 316L"},
+ai:["Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Detecção de Movimento"],
+extra:{Certificação:"IECEx / ATEX Zone 1,2,21,22",ExProof:"Ex d IIC T6 Gb / Ex tb IIIC T80°C Db",Alimentação:"12VDC / PoE",Consumo:"15W max",Operação:"-40°C ~ +60°C",Proteção:"IP68"},t:["4MP","ATEX","Bullet","Inox 316L","Zone 1"]},
+
+// ===== D2P THERMAL CUBE (DATA CENTER) =====
+{m:"GTL-D2P-F",n:"Bi-spectrum Compact Thermal Camera (Data Center)",c:"thermal",s:"D2P Cube",img:IMG.thermal,
+sp:{SensorTermico:'256×192 VOx Uncooled (12μm)',SensorOptico:'1/2.8" 2MP STARVIS CMOS',LenteTermica:"2mm fixa (90°×65°)",LenteOptica:"2.3mm fixa (100°×75°)",NETD:"≤60mK",Faixa:"-20°C ~ +150°C ou 0°C ~ +550°C",Precisão:"±2°C ou ±2%",Compressão:"H.265+/H.264+"},
+ai:["Detecção de Fogo (Fire Spot)","Detecção de Fumaça","Alarme de Temperatura","3 tipos de medição (Spot/Line/Area)","20 regras de temperatura","Fusão térmica + óptica"],
+extra:{Áudio:"Mic integrado + Warm Light",Alarme:"1 in / 1 out",RS485:"Sim",RS232:"Sim",Slot:"MicroSD até 512GB",Montagem:"Magnética / Bracket",Alimentação:"12VDC / PoE (802.3af)",Consumo:"3W max",Operação:"-30°C ~ +60°C",Proteção:"IP67",Protocolos:"Modbus TCP, ONVIF"},t:["Térmica","D2P","Data Center","256x192","Modbus"]},
+
+{m:"GTL-D2L-F",n:"Thermal Detector Camera High Accuracy",c:"thermal",s:"D2L Cube",img:IMG.thermal,
+sp:{SensorTermico:'256×192 VOx Uncooled',LenteTermica:"2mm fixa",NETD:"≤60mK",Faixa:"-20°C ~ +150°C",Precisão:"±2°C ou ±2%",Compressão:"H.265+/H.264+",FPS:"25fps"},
+ai:["Alarme de Temperatura","3 tipos de medição (Spot/Line/Area)","Detecção de anomalia térmica"],
+extra:{Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"3W max",Operação:"-20°C ~ +60°C",Proteção:"IP66"},t:["Térmica","D2L","Compacta","256x192"]},
+
+// ===== RADARS =====
+{m:"GTL-SMWR21A-P",n:"Perimeter Security Radar 300m",c:"radar",s:"Radar Perímetro",img:IMG.radar,
+sp:{Tecnologia:"FMCW Radar 24GHz",Frequência:"24.05 ~ 24.15 GHz",AlcancePedestre:"até 300m (walking), 150m (climbing)",AlcanceVeículo:"até 300m",PrecisãoDistância:"±0.75m",ResoluçãoDistância:"1.5m",VelocidadeDetecção:"0.03 ~ 30 m/s",PrecisãoÂngulo:"±1°",FOV:"Azimute 20° / Elevação 13°"},
+ai:["Identificação Pessoa/Veículo","Trajetória de movimento","Linkage com PTZ","Alarme de intrusão","Filtragem de alvos"],
+extra:{Comunicação:"UDP/TCP",Rede:"RJ45 10/100M PoE",Alarme:"2 out / 1 in",RS485:"Sim",Relay:"2ch output",Alimentação:"12VDC / PoE (802.3af)",Consumo:"8W",Operação:"-40°C ~ +75°C",Proteção:"IP66",Peso:"1.0 kg"},t:["Radar","300m","Perímetro","24GHz","FMCW"]},
+
+{m:"GTL-SMWR01A",n:"Wide Area Detection Radar 1500m",c:"radar",s:"Radar Longo Alcance",img:IMG.radar,
+sp:{Tecnologia:"FMCW Radar",AlcanceDetecção:"até 1500m",PrecisãoDistância:"±3m",FOV:"Azimute 90°",VelocidadeDetecção:"0.5 ~ 50 m/s",RefreshRate:"10 Hz"},
+ai:["Detecção de área ampla","Tracking de múltiplos alvos","Linkage com PTZ","Proteção perimetral","Monitoramento marítimo"],
+extra:{Comunicação:"TCP/IP",Alimentação:"24VDC / PoE+",Operação:"-40°C ~ +70°C",Proteção:"IP66",Aplicação:"Fronteiras / Portos / Áreas críticas"},t:["Radar","1500m","Wide Area","Longo Alcance"]},
+
+{m:"GTL-SMWR02A",n:"Wide Area Detection Radar 800m",c:"radar",s:"Radar Médio Alcance",img:IMG.radar,
+sp:{Tecnologia:"FMCW Radar",AlcanceDetecção:"até 800m",PrecisãoDistância:"±2m",FOV:"Azimute 60°",VelocidadeDetecção:"0.3 ~ 40 m/s"},
+ai:["Multi-target tracking","Linkage com PTZ","Filtragem inteligente","Alarme de zona"],
+extra:{Comunicação:"TCP/IP",Alimentação:"12VDC / PoE",Operação:"-40°C ~ +65°C",Proteção:"IP66"},t:["Radar","800m","Médio Alcance"]},
+
+{m:"GTL-SMWR03A",n:"Wide Area Detection Radar 500m",c:"radar",s:"Radar Compacto",img:IMG.radar,
+sp:{Tecnologia:"FMCW Radar",AlcanceDetecção:"até 500m",PrecisãoDistância:"±1.5m",FOV:"Azimute 40°",VelocidadeDetecção:"0.2 ~ 30 m/s"},
+ai:["Detecção de intrusão","Tracking de alvos","Linkage com PTZ"],
+extra:{Comunicação:"TCP/IP",Alimentação:"12VDC / PoE",Operação:"-40°C ~ +60°C",Proteção:"IP66"},t:["Radar","500m","Compacto"]}
+];
+
+let cat='all', q='';
+
+function render() {
+    const f = P.filter(p => (cat === 'all' || p.c === cat) && (q === '' || p.m.toLowerCase().includes(q) || p.n.toLowerCase().includes(q) || p.s.toLowerCase().includes(q) || p.t.some(t => t.toLowerCase().includes(q))));
+    
+    document.getElementById('count').textContent = f.length;
+    
+    if (f.length === 0) {
+        document.getElementById('grid').innerHTML = `
+            <div class="empty-state" style="grid-column: 1/-1;">
+                <i class="fas fa-search"></i>
+                <h3>Nenhum produto encontrado</h3>
+                <p>Tente buscar por outro termo ou categoria</p>
+            </div>`;
+        return;
+    }
+    
+    document.getElementById('grid').innerHTML = f.map(p => `
+        <div class="card" onclick="openModal('${p.m}')">
+            <div class="card-img">
+                <span class="card-badge">${p.s}</span>
+                <img src="${p.img}" alt="${p.n}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%230f0f0f%22 width=%22100%22 height=%22100%22/><text x=%2250%22 y=%2250%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%2300a0e3%22 font-size=%2212%22>G%27Vision</text></svg>'">
+            </div>
+            <div class="card-body">
+                <div class="card-model"><i class="fas fa-circle"></i> ${p.m}</div>
+                <div class="card-name">${p.n}</div>
+                <div class="card-tags">${p.t.slice(0, 4).map(t => `<span class="tag">${t}</span>`).join('')}</div>
+                <button class="card-btn"><i class="fas fa-info-circle"></i> Ver especificações</button>
+            </div>
+        </div>
+    `).join('');
+}
+
+function openModal(m) {
+    const p = P.find(x => x.m === m);
+    if (!p) return;
+    
+    // Build AI features list
+    let aiHtml = '';
+    if (p.ai && p.ai.length > 0) {
+        aiHtml = `
+            <div class="specs-section">
+                <div class="specs-title"><i class="fas fa-brain"></i> Inteligência Artificial Embarcada</div>
+                <div class="ai-tags">${p.ai.map(a => `<span class="ai-tag"><i class="fas fa-check"></i> ${a}</span>`).join('')}</div>
+            </div>
+        `;
+    }
+    
+    // Build extra specs
+    let extraHtml = '';
+    if (p.extra) {
+        extraHtml = `
+            <div class="specs-title"><i class="fas fa-cogs"></i> Especificações Adicionais</div>
+            <div class="specs-grid">
+                ${Object.entries(p.extra).map(([k, v]) => `
+                    <div class="spec-item">
+                        <div class="spec-label">${k}</div>
+                        <div class="spec-value">${v}</div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+    
+    document.getElementById('modal-content').innerHTML = `
+        <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+        <div class="modal-img">
+            <img src="${p.img}" alt="${p.n}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%230f0f0f%22 width=%22100%22 height=%22100%22/><text x=%2250%22 y=%2250%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%2300a0e3%22 font-size=%2212%22>G%27Vision</text></svg>'">
+        </div>
+        <div class="modal-body">
+            <div class="modal-model">${p.m}</div>
+            <h2 class="modal-name">${p.n}</h2>
+            
+            <div class="specs-title"><i class="fas fa-microchip"></i> Especificações Técnicas</div>
+            <div class="specs-grid">
+                ${Object.entries(p.sp).map(([k, v]) => `
+                    <div class="spec-item">
+                        <div class="spec-label">${k}</div>
+                        <div class="spec-value">${v}</div>
+                    </div>
+                `).join('')}
+            </div>
+            
+            ${aiHtml}
+            ${extraHtml}
+            
+            <div class="modal-actions">
+                <button class="btn btn-primary" onclick="navigator.clipboard.writeText('${p.m}');this.innerHTML='<i class=\\'fas fa-check\\'></i> Copiado!'">
+                    <i class="fas fa-copy"></i> Copiar código
+                </button>
+                <button class="btn btn-secondary" onclick="closeModal()">
+                    <i class="fas fa-times"></i> Fechar
+                </button>
+            </div>
+        </div>
+    `;
+    document.getElementById('modal').classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    document.getElementById('modal').classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    render();
+    
+    document.getElementById('search').addEventListener('input', e => {
+        q = e.target.value.toLowerCase();
+        render();
+    });
+    
+    document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelectorAll('nav a').forEach(x => x.classList.remove('active'));
+        a.classList.add('active');
+        cat = a.dataset.cat;
+        render();
+    }));
+    
+    document.getElementById('modal').addEventListener('click', e => {
+        if (e.target.id === 'modal') closeModal();
+    });
+    
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeModal();
+    });
+});
+</script>
+</body>
+</html>
