@@ -771,10 +771,12 @@ footer {
 <nav>
     <div class="nav-inner">
         <a href="#" data-cat="all" class="active"><i class="fas fa-th"></i> Todos</a>
-        <a href="#" data-cat="ptz"><i class="fas fa-video"></i> PTZ Speed Dome</a>
-        <a href="#" data-cat="ip"><i class="fas fa-camera"></i> Câmeras IP</a>
+        <a href="#" data-cat="ptz"><i class="fas fa-video"></i> PTZ</a>
+        <a href="#" data-cat="dome"><i class="fas fa-circle"></i> Dome</a>
+        <a href="#" data-cat="bullet"><i class="fas fa-minus"></i> Bullet</a>
+        <a href="#" data-cat="ip"><i class="fas fa-camera"></i> IP Geral</a>
         <a href="#" data-cat="anpr"><i class="fas fa-car"></i> LPR/ANPR</a>
-        <a href="#" data-cat="deterrence"><i class="fas fa-bell"></i> Active Deterrence</a>
+        <a href="#" data-cat="deterrence"><i class="fas fa-bell"></i> Deterrence</a>
         <a href="#" data-cat="panoramic"><i class="fas fa-expand"></i> Panorâmicas</a>
         <a href="#" data-cat="thermal"><i class="fas fa-temperature-high"></i> Térmicas</a>
         <a href="#" data-cat="explosion"><i class="fas fa-fire-alt"></i> Anti-Explosão</a>
@@ -812,6 +814,7 @@ footer {
 const IMG = {
     ptz: "https://www.sunellsecurity.com/resources/image/2025/06/16/SN-IPS8655WDR-Z30.png",
     bullet: "https://www.sunellsecurity.com/resources/image/2025/06/19/SN-IPR8046AKAN(-S)-VZ.png",
+    dome: "https://www.sunellsecurity.com/resources/image/Pro-Series-IP-Camera.webp",
     ultra: "https://www.sunellsecurity.com/resources/image/2025/06/20/SN-IPR8084DQAN-VZ.png",
     thermal: "https://www.sunellsecurity.com/resources/image/Bullet-Thermal-Cameras.webp",
     anpr: "https://www.sunellsecurity.com/resources/image/anpr-cctv-camera-web-banner.webp",
@@ -903,10 +906,77 @@ sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"2.7-
 ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
 extra:{Áudio:"Mic + Speaker",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"8W max",Operação:"-30°C ~ +60°C",Proteção:"IP66 IK10"},t:["4MP","Turret","Pro"]},
 
-{m:"GTL-IPD8046DQAN-B",n:"4MP Pro Dome Camera",c:"ip",s:"Pro Dome",img:IMG.bullet,
+{m:"GTL-IPD8046DQAN-B",n:"4MP Pro Dome Camera",c:"ip",s:"Pro Dome",img:IMG.dome,
 sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"2.7-12mm motorizada",IR:"40m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP",Abertura:"F1.4"},
 ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
 extra:{Áudio:"Mic + Speaker",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"8W max",Operação:"-30°C ~ +60°C",Proteção:"IP66 IK10, anti-vandalismo"},t:["4MP","Dome","Pro","IK10"]},
+
+// ===== DOME CAMERAS =====
+{m:"GTL-IPD8046EPAR-B",n:"4MP Mini Dome Indoor Cable Free",c:"dome",s:"Mini Dome",img:IMG.dome,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"2.8mm ou 4mm fixa",IR:"30m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Loitering","Contagem de Pessoas"],
+extra:{Áudio:"Mic integrado + I/O",Alarme:"1 in / 1 out",Slot:"MicroSD até 1TB",Alimentação:"12VDC / PoE",Consumo:"8W max",Operação:"-30°C ~ +60°C",Terminação:"Interna (Cable Free)"},t:["4MP","Mini Dome","Indoor","Cable Free"]},
+
+{m:"GTL-IPD8080EPAR-B",n:"8MP 4K Mini Dome Indoor Cable Free",c:"dome",s:"Mini Dome 4K",img:IMG.dome,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"2.8mm ou 4mm fixa",IR:"15m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"25fps@4K"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Loitering","Contagem de Pessoas"],
+extra:{Áudio:"Mic integrado + I/O",Alarme:"1 in / 1 out",Slot:"MicroSD até 1TB",Alimentação:"12VDC / PoE",Consumo:"10W max",Terminação:"Interna (Cable Free)"},t:["8MP","4K","Mini Dome","Indoor"]},
+
+{m:"GTL-IPV8046UAR-Z",n:"4MP IR Varifocal Dome Camera",c:"dome",s:"Dome VF",img:IMG.dome,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"2.7-13.5mm motorizada",IR:"40m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Loitering","Estacionamento Ilegal","Contagem de Pessoas"],
+extra:{Áudio:"1 in / 1 out",Alarme:"1 in / 1 out",Slot:"MicroSD até 1TB",Alimentação:"12VDC / PoE",Consumo:"12W max",Operação:"-40°C ~ +60°C",Proteção:"IP67 IK10"},t:["4MP","Dome","Motorizada","IK10"]},
+
+{m:"GTL-IPV8080UAR-Z",n:"8MP 4K IR Varifocal Dome Camera",c:"dome",s:"Dome 4K",img:IMG.dome,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"2.7-13.5mm motorizada",IR:"40m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"25fps@4K"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Loitering","Contagem de Pessoas"],
+extra:{Áudio:"1 in / 1 out",Alarme:"1 in / 1 out",Slot:"MicroSD até 1TB",Alimentação:"12VDC / PoE",Consumo:"15W max",Operação:"-40°C ~ +60°C",Proteção:"IP67 IK10"},t:["8MP","4K","Dome","IK10"]},
+
+{m:"GTL-IPV8080EDAR-Z",n:"8MP 4K IR Cable Free Dome",c:"dome",s:"Dome 4K CF",img:IMG.dome,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"2.7-13.5mm motorizada",IR:"40m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"25fps@4K"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Contagem de Pessoas"],
+extra:{Áudio:"1 in / 1 out",Alarme:"1 in / 1 out",Slot:"MicroSD até 1TB",Alimentação:"12VDC / PoE",Terminação:"Interna (Cable Free)",Proteção:"IP66 IK10"},t:["8MP","4K","Dome","Cable Free"]},
+
+{m:"GTL-IPV8040EGAR-B",n:"4MP IR Mini Dome Camera",c:"dome",s:"Mini Dome",img:IMG.dome,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"2.8mm ou 4mm fixa",IR:"15m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic integrado + I/O",Alarme:"1 in / 1 out",Slot:"MicroSD até 512GB",Alimentação:"12VDC / PoE",Consumo:"7W max",Proteção:"IP66"},t:["4MP","Mini Dome","Compacta"]},
+
+// ===== BULLET CAMERAS =====
+{m:"GTL-IPR8080AKAN-Z",n:"8MP 4K IR Bullet Network Camera",c:"bullet",s:"Bullet 4K",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"2.7-13.5mm motorizada",IR:"60m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"25fps@4K"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Loitering","Contagem de Pessoas"],
+extra:{Áudio:"1 in / 1 out",Alarme:"1 in / 1 out",Slot:"MicroSD até 1TB",Alimentação:"12VDC / PoE",Consumo:"15W max",Operação:"-40°C ~ +60°C",Proteção:"IP67 IK10"},t:["8MP","4K","Bullet","60m IR"]},
+
+{m:"GTL-IPR8080BYAN-B",n:"8MP 4K IR Fixed Bullet Camera",c:"bullet",s:"Bullet 4K Fix",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"2.8mm ou 4mm fixa",IR:"30m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"25fps@4K"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Contagem de Pessoas"],
+extra:{Áudio:"1 in / 1 out",Alarme:"1 in / 1 out",Slot:"MicroSD até 1TB",Alimentação:"12VDC / PoE",Consumo:"12W max",Proteção:"IP67"},t:["8MP","4K","Bullet","Fixa"]},
+
+{m:"GTL-IPR8040AKAN-Z",n:"4MP IR Bullet Long Range 100m",c:"bullet",s:"Bullet LR",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"2.7-13.5mm ou 5-50mm motorizada",IR:"100m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Loitering","Contagem de Pessoas"],
+extra:{Áudio:"1 in / 1 out",Alarme:"1 in / 1 out",Slot:"MicroSD até 1TB",Alimentação:"12VDC / PoE+",Consumo:"18W max",Operação:"-40°C ~ +60°C",Proteção:"IP67 IK10"},t:["4MP","Bullet","100m IR","Longo Alcance"]},
+
+{m:"GTL-IPR8045AKAN-Z",n:"4MP 60fps IR Bullet Camera",c:"bullet",s:"Bullet 60fps",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"4MP (2592×1520)",Lente:"2.7-13.5mm ou 5-50mm motorizada",IR:"60m ou 100m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"60fps@4MP"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Contagem de Pessoas"],
+extra:{Áudio:"1 in / 1 out",Alarme:"1 in / 1 out",Slot:"MicroSD até 1TB",Speaker:"-S com Speaker",Alimentação:"12VDC / PoE+",Consumo:"15W max",Proteção:"IP66 IK10"},t:["4MP","Bullet","60fps","Alta Velocidade"]},
+
+{m:"GTL-IPR8050BZAN-Z",n:"5MP IR Varifocal Bullet Camera",c:"bullet",s:"Bullet 5MP",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"5MP (2592×1944)",Lente:"2.7-13.5mm motorizada",IR:"40m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"25fps@5MP"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Contagem de Pessoas"],
+extra:{Áudio:"1 in / 1 out",Alarme:"1 in / 1 out",Slot:"MicroSD até 1TB",Alimentação:"12VDC / PoE",Consumo:"12W max",Proteção:"IP67"},t:["5MP","Bullet","Motorizada"]},
+
+{m:"GTL-IPR8056BYAN-B",n:"5MP IR Fixed Bullet Camera",c:"bullet",s:"Bullet 5MP Fix",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"5MP (2592×1944)",Lente:"2.8mm ou 4mm fixa",IR:"30m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"25fps@5MP"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic integrado",Slot:"MicroSD até 512GB",Alimentação:"12VDC / PoE",Consumo:"8W max",Proteção:"IP67"},t:["5MP","Bullet","Fixa","Compacta"]},
+
+{m:"GTL-IPR8090AKAN-PZ",n:"12MP IR Motorized Bullet Camera",c:"bullet",s:"Bullet 12MP",img:IMG.bullet,
+sp:{Sensor:'1/1.7" Progressive Scan CMOS',Resolução:"12MP (4000×3000)",Lente:"2.7-12mm motorizada",IR:"50m Smart IR",WDR:"120dB True WDR",DNR:"3D DNR",Compressão:"H.265+/H.264+",FPS:"20fps@12MP"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Contagem de Pessoas"],
+extra:{Áudio:"1 in / 1 out",Alarme:"1 in / 1 out",Slot:"MicroSD até 1TB",Alimentação:"12VDC / PoE+",Consumo:"18W max",Proteção:"IP67 IK10"},t:["12MP","Bullet","Ultra HD","Motorizada"]},
 
 // ===== ACTIVE DETERRENCE =====
 {m:"GTL-IPV8542CQAE-B",n:"4MP Active Deterrence Turret Camera",c:"deterrence",s:"Deterrence",img:IMG.deterrence,
@@ -992,6 +1062,83 @@ extra:{Precisão:"±2°C ou ±2%",Alarme:"7 in / 2 out",Slot:"MicroSD até 256GB
 sp:{SensorTermico:'400×300 VOx Uncooled',SensorOptico:'1/2.8" 4MP CMOS',LenteTermica:"7mm fixa",LenteOptica:"4mm fixa",NETD:"≤40mK @25°C",Faixa:"-20°C ~ +150°C",IR:"30m Smart IR",Compressão:"H.265+/H.264+"},
 ai:["Detecção de Fogo/Fumaça","Reconhecimento Humano/Veículo","Alarme de temperatura","Cruzamento de Linha bi-spectrum"],
 extra:{Precisão:"±2°C ou ±2%",Alarme:"1 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"10W max",Operação:"-40°C ~ +60°C",Proteção:"IP66"},t:["Térmica","Turret","Bi-Spectrum","Compacta"]},
+
+// ===== DOME CAMERAS (Fixed) =====
+{m:"GTL-IPD8080EPAR-B",n:"8MP Indoor Mini Dome Camera",c:"ip",s:"Dome Mini",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"2.8mm fixa",IR:"N/A (indoor)",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"25fps@4K"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Contagem de Pessoas"],
+extra:{Áudio:"Mic integrado",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"6W max",Operação:"-10°C ~ +50°C",Proteção:"Indoor",Instalação:"Cable-free design"},t:["8MP","4K","Dome","Indoor","Mini"]},
+
+{m:"GTL-IPV8080EGAR-B",n:"8MP IR Fixed Dome Camera",c:"ip",s:"Dome IR",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"2.8mm fixa",IR:"30m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"25fps@4K"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Loitering Detection"],
+extra:{Áudio:"Mic integrado",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"8W max",Operação:"-30°C ~ +60°C",Proteção:"IP66"},t:["8MP","4K","Dome","Starlight"]},
+
+{m:"GTL-IPV8080EWAR-B",n:"8MP Waterproof Fixed Dome Camera",c:"ip",s:"Dome WP",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"2.8mm fixa",IR:"30m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"25fps@4K"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic + Speaker",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"10W max",Operação:"-30°C ~ +60°C",Proteção:"IP67"},t:["8MP","4K","Dome","IP67","Waterproof"]},
+
+{m:"GTL-IPV8080EDAR-Z",n:"8MP Motorized Dome Camera",c:"ip",s:"Dome VF",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"2.7-13.5mm motorizada",IR:"40m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"25fps@4K"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Contagem de Pessoas"],
+extra:{Áudio:"Mic + Speaker",Alarme:"1 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"12W max",Operação:"-30°C ~ +60°C",Proteção:"IP66 IK10"},t:["8MP","4K","Dome","Motorizada","IK10"]},
+
+{m:"GTL-IPV8046EGAR-B",n:"4MP IR Fixed Dome Camera",c:"ip",s:"Dome IR",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"2.8mm fixa",IR:"30m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic integrado",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"7W max",Operação:"-30°C ~ +60°C",Proteção:"IP66"},t:["4MP","Dome","Starlight","Compacta"]},
+
+{m:"GTL-IPD8046EPAR-B",n:"4MP Indoor Mini Dome Camera",c:"ip",s:"Dome Mini",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"4MP (2592×1520)",Lente:"2.8mm fixa",IR:"N/A",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic integrado",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"5W max",Operação:"-10°C ~ +50°C",Proteção:"Indoor"},t:["4MP","Dome","Indoor","Mini"]},
+
+{m:"GTL-IPV8056EEAR-VZ",n:"5MP Motorized Dome Camera",c:"ip",s:"Dome VF",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"5MP (2592×1944)",Lente:"2.7-13.5mm motorizada",IR:"40m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@5MP"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic + Speaker",Alarme:"1 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"10W max",Operação:"-30°C ~ +60°C",Proteção:"IP66 IK10"},t:["5MP","Dome","Motorizada","IK10"]},
+
+{m:"GTL-IPV8020EGAR-B",n:"2MP IR Fixed Dome Camera",c:"ip",s:"Dome IR",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"2MP (1920×1080)",Lente:"2.8mm fixa",IR:"30m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@1080p"},
+ai:["Detecção de Movimento","Cruzamento de Linha","Intrusão de Área"],
+extra:{Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"6W max",Operação:"-30°C ~ +60°C",Proteção:"IP66"},t:["2MP","1080p","Dome","Entrada"]},
+
+// ===== BULLET CAMERAS (Fixed) =====
+{m:"GTL-IPR8084BYAN-B",n:"8MP Fixed Bullet Camera",c:"ip",s:"Bullet IR",img:IMG.bullet,
+sp:{Sensor:'1/1.8" Sony STARVIS CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"2.8mm ou 4mm fixa",IR:"40m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"25fps@4K"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"9W max",Operação:"-40°C ~ +60°C",Proteção:"IP67"},t:["8MP","4K","Bullet","Starlight","IP67"]},
+
+{m:"GTL-IPR8080BYAN-B",n:"8MP Pro Fixed Bullet Camera",c:"ip",s:"Bullet Pro",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"2.8mm fixa",IR:"40m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"25fps@4K"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Loitering Detection"],
+extra:{Áudio:"Mic integrado",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"8W max",Operação:"-30°C ~ +60°C",Proteção:"IP67"},t:["8MP","4K","Bullet","Pro"]},
+
+{m:"GTL-IPR8080BZAN-Z",n:"8MP Motorized Bullet Camera",c:"ip",s:"Bullet VF",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"8MP 4K (3840×2160)",Lente:"2.7-13.5mm motorizada",IR:"50m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"25fps@4K"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área","Contagem de Pessoas"],
+extra:{Áudio:"Mic + Speaker",Alarme:"1 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"12W max",Operação:"-40°C ~ +60°C",Proteção:"IP67"},t:["8MP","4K","Bullet","Motorizada","50m IR"]},
+
+{m:"GTL-IPR8056BYAN-B",n:"5MP Fixed Bullet Camera",c:"ip",s:"Bullet IR",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"5MP (2592×1944)",Lente:"2.8mm ou 4mm fixa",IR:"40m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@5MP"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"7W max",Operação:"-40°C ~ +60°C",Proteção:"IP67"},t:["5MP","Bullet","IR 40m"]},
+
+{m:"GTL-IPR8046BYAN-B",n:"4MP Fixed Bullet Camera",c:"ip",s:"Bullet IR",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"2.8mm ou 4mm fixa",IR:"40m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"7W max",Operação:"-40°C ~ +60°C",Proteção:"IP67"},t:["4MP","Bullet","Starlight","Compacta"]},
+
+{m:"GTL-IPR8046BZAN-VZ",n:"4MP Motorized Bullet Camera",c:"ip",s:"Bullet VF",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Sony STARVIS CMOS',Resolução:"4MP (2592×1520)",Lente:"2.7-13.5mm motorizada",IR:"50m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@4MP"},
+ai:["Detecção Facial","Reconhecimento Humano/Veículo","Cruzamento de Linha","Intrusão de Área"],
+extra:{Áudio:"Mic + Speaker",Alarme:"1 in / 1 out",Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"10W max",Operação:"-40°C ~ +60°C",Proteção:"IP67 IK10"},t:["4MP","Bullet","Motorizada","50m IR"]},
+
+{m:"GTL-IPR8020BYAN-B",n:"2MP Fixed Bullet Camera",c:"ip",s:"Bullet IR",img:IMG.bullet,
+sp:{Sensor:'1/2.8" Progressive Scan CMOS',Resolução:"2MP (1920×1080)",Lente:"2.8mm ou 4mm fixa",IR:"30m Smart IR",WDR:"120dB True WDR",Compressão:"H.265+/H.264+",FPS:"30fps@1080p"},
+ai:["Detecção de Movimento","Cruzamento de Linha","Intrusão de Área"],
+extra:{Slot:"MicroSD até 256GB",Alimentação:"12VDC / PoE",Consumo:"6W max",Operação:"-40°C ~ +60°C",Proteção:"IP67"},t:["2MP","1080p","Bullet","Entrada"]},
 
 // ===== ECO SERIES =====
 {m:"GTL-IPV7180HCAR-B",n:"8MP Eco Turret Camera",c:"ip",s:"Eco",img:IMG.eco,
